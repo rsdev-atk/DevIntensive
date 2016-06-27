@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">DevIntensive</string>
+    <string name="app_name">Ткаченко Александр</string>
+    <string name="about_value">Программист с опытом 6 лет. Познаю детали Android разработки. Женат. Сын 2 года.</string>
+    <string name="rating_value">5</string>
+    <string name="rating_text">Рейтинг</string>
+    <string name="count_string_text">Написано строк кода</string>
+    <string name="count_string_value">86000</string>
+    <string name="projects_count_text">Проектов</string>
+    <string name="projects_count_value">6</string>
+    <string name="mobile_phone_text">Мобильный телефон</string>
+    <string name="mobile_phone_value">89234810186</string>
+    <string name="email_text">Почта</string>
+    <string name="email_value">rsdev.info@gmail.com</string>
+    <string name="vk_text">Профиль в VK</string>
+    <string name="vk_value">vk.com/AlexanderTK</string>
+    <string name="git_text">Репозиторий</string>
+    <string name="git_value">github.com/rsdev-atk/DevIntensive</string>
+    <string name="about_text">О себе</string>
 </resources>
