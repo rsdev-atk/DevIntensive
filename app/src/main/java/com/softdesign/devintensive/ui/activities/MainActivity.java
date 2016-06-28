@@ -40,6 +40,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate");
 
+        if(savedInstanceState != null) {
+
+            mCurrentEditMode = savedInstanceState.getInt(ConstantManager.EDIT_MODE_KEY, 0);
+            changeEditMode(mCurrentEditMode);
+        }
+
         mCoordinatorLayout = (CoordinatorLayout)findViewById(R.id.main_coordinator_container);
 
         showSnackbar("Hello World111");
@@ -94,15 +100,21 @@ public class MainActivity extends BaseActivity {
 
 
     private void changeEditMode(int mode){
-       if(mode == 1){
+
+        mFloatingActionButton.setImageResource(R.drawable.ic_done_black_24dp);
+        if(mode == 1){
            for(EditText userValue : mUserInfo){
                userValue.setEnabled(true);
                userValue.setFocusable(true);
+               userValue.setFocusableInTouchMode(true);
            }
        }else {
-           for(EditText userValue : mUserInfo){
+            mFloatingActionButton.setImageResource(R.drawable.ic_build_black_24dp);
+            for(EditText userValue : mUserInfo){
                userValue.setEnabled(false);
                userValue.setFocusable(false);
+               userValue.setFocusableInTouchMode(false);
+
            }
        }
 
@@ -114,6 +126,11 @@ public class MainActivity extends BaseActivity {
 
     private void saveUserInfoValue(){
 
+    }
+
+    protected void onSaveInstanceState(Bundle bundle){
+        super.onSaveInstanceState(bundle);
+        bundle.putInt(ConstantManager.EDIT_MODE_KEY, mCurrentEditMode);
     }
 
     private void showSnackbar(String message){
